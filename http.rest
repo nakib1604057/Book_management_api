@@ -1,0 +1,56 @@
+###
+GET http://localhost:5000/
+
+###
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+    "fullname":"Akram Hossain",
+    "username":"nakib2",
+    "email":"nakib@gmail.com",
+    "password":"test1234"
+}
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username":"nakib2",
+    "password":"test1234"
+}
+###
+GET http://localhost:5000/books
+
+###
+POST http://localhost:5000/addCategory
+Content-Type: application/json
+
+{
+    "name":"Cate-5"
+}
+
+###
+POST http://localhost:5000/createbook
+Content-Type: application/json
+
+{
+    "name":"title xyz",
+    "author":"nakib2",
+    "categoryId":1
+}
+
+###
+POST http://localhost:5000/user/collection
+Content-Type: application/json
+
+{
+    "username":"nakib2",
+    "bookId":3
+}
+###
+GET  http://localhost:5000/user/collection
+Content-Type: application/json
+
+###
+
