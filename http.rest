@@ -7,8 +7,8 @@ Content-Type: application/json
 
 {
     "fullname":"Akram Hossain",
-    "username":"nakib2",
-    "email":"nakib@gmail.com",
+    "username":"nakib4",
+    "email":"nakib4@gmail.com",
     "password":"test1234"
 }
 ###
@@ -16,7 +16,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "username":"nakib2",
+    "username":"nakib4",
     "password":"test1234"
 }
 ###
@@ -35,22 +35,36 @@ POST http://localhost:5000/createbook
 Content-Type: application/json
 
 {
-    "name":"title xyz",
-    "author":"nakib2",
-    "categoryId":1
+    "name":"title jkl",
+    "author":"Rahman Uddin",
+    "categoryId":2
 }
 
 ###
 POST http://localhost:5000/user/collection
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYWtpYjQiLCJhdWRFbWFpbCI6Im5ha2liNEBnbWFpbC5jb20iLCJpYXQiOjE2NTY4NDc2NTMsImV4cCI6MTY1NjkzNDA1MywiaXNzIjoibmFraWIifQ.cggxK2uY4r5U5UOQRWI2X0PiSwvFb2QuTSHdr8QjAyg
 Content-Type: application/json
 
 {
-    "username":"nakib2",
-    "bookId":3
+    "bookId":4
 }
 ###
 GET  http://localhost:5000/user/collection
-Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYWtpYjIiLCJhdWRFbWFpbCI6Im5ha2liQGdtYWlsLmNvbSIsImlhdCI6MTY1Njg0NjQxNCwiZXhwIjoxNjU2OTMyODE0LCJpc3MiOiJuYWtpYiJ9.cC08lzTRojQKL11Av1cC7gWkTHilA1rbjX_y7k0DyH8
+
 
 ###
+POST http://localhost:5000/share/collection
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYWtpYjIiLCJhdWRFbWFpbCI6Im5ha2liQGdtYWlsLmNvbSIsImlhdCI6MTY1Njg0NjQxNCwiZXhwIjoxNjU2OTMyODE0LCJpc3MiOiJuYWtpYiJ9.cC08lzTRojQKL11Av1cC7gWkTHilA1rbjX_y7k0DyH8
+Content-Type: application/json
 
+{
+    "bookId":4,
+    "holderUsername":"nakib1"
+}
+
+###
+GET http://localhost:5000/share/collection
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJuYWtpYjIiLCJhdWRFbWFpbCI6Im5ha2liQGdtYWlsLmNvbSIsImlhdCI6MTY1Njg0NjQxNCwiZXhwIjoxNjU2OTMyODE0LCJpc3MiOiJuYWtpYiJ9.cC08lzTRojQKL11Av1cC7gWkTHilA1rbjX_y7k0DyH8
+###
+GET http://localhost:5000/res

@@ -1,0 +1,6 @@
+module.exports = {
+  ACCESS_TOKEN_SECRET:
+    "94636f5aad9ee514ce28a70fdcd2db684557b50584dc7bdb580407bc3b6e377a",
+  REFRESH_TOKEN_SECRET:
+    "c79df9d7561e47af5a30521441fa630e81bdadf0b78d123c2cfe21c0e64e6b2e",
+};

@@ -38,6 +38,13 @@ model UserCollection{
   username String 
   book   Book? @relation(fields:[bookId],references: [id])
   bookId Int
+  sharedCollections SharedCollection[]
 }
 
+model SharedCollection{
+  id Int @id @default(autoincrement())
+  shareHolderId String
+  usercollection UserCollection?@relation(fields: [userCollectionId],references: [id])
+  userCollectionId Int
+}
 

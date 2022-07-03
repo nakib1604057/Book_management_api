@@ -1,12 +1,13 @@
 import { Router } from "express";
 const { PrismaClient } = require("@prisma/client");
-
+const { signAccessToken, signRefreshToken } = require("../helper/jwt_helper");
 const prisma = new PrismaClient();
 
 const userSignUP = async (req: any, res: any, next: any) => {
   try {
     const { fullname, username, email, password } = req.body;
     const userExist = await isUserExist(email, username);
+    console.log(userExist);
     if (userExist) {
       res.json({
         status: "Bed request",
@@ -44,9 +45,13 @@ const userLogin = async (req: any, res: any) => {
     });
 
     if (user.length > 0) {
+      const accessToken = await signAccessToken(username, user[0].email);
+      const refreshToken = await signRefreshToken(username, user[0].email);
       res.json({
         status: "Successfull",
         message: `Welcome back ${username}`,
+        accessToken: accessToken,
+        refreshToken: refreshToken,
       });
     } else {
       res.json({
@@ -64,7 +69,7 @@ const isUserExist = async (email: string, username: string) => {
       OR: [{ email: String(email) }, { userName: String(username) }],
     },
   });
-  if (user) {
+  if (user.length > 0) {
     return true;
   } else {
     return false;
