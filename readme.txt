@@ -50,3 +50,4 @@ https://www.prisma.io/docs/concepts/database-connectors/postgresql
 
 Or you can use any tool like (Postman,Insomina) to use this APIS. 
 
+
